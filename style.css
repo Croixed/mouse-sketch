@@ -1,0 +1,13 @@
+* {
+  background-color: rgb(215, 236, 224);
+}
+
+
+.grid-container {
+  background-color: slategray;
+  display: grid;
+  grid-template: repeat(3, 110px) / repeat(6, 1fr);
+  /*when drawing an L, you start top and go down, then LR*/
+  grid-gap: 4px;
+}
+
