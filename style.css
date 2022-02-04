@@ -1,13 +1,75 @@
 * {
   background-color: rgb(215, 236, 224);
+  font-family: sans-serif;
+  font-weight: bold;
+}
+
+html, body {
+  box-sizing: border-box; /* this makes the page fit so you don't have to scroll a tiny bit  */
+  height: 100%;
+  padding: 2px;
+  margin: 0px;
+}
+
+.content {
+  height: 100%;
+  display: grid;
+  grid-gap: 4px;
+  grid-template: 120px auto / 1fr 540px 1fr;
+}
+
+.header {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.header,
+.header > * {
+  background-color: tomato;
+  color: white;
+}
+
+.settings {
+  grid-column: 1 / 2;
+  background-color: royalblue;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 30px;
+}
+
+.settings > * {
+  font-size: 1.2em;
+  background-color: white;
+  align-self: center;
 }
 
 
 .grid-container {
-  background-color: slategray;
-  display: grid;
-  grid-template: repeat(3, 110px) / repeat(6, 1fr);
-  /*when drawing an L, you start top and go down, then LR*/
-  grid-gap: 4px;
+  grid-column: 2 / -2;
 }
 
+
+.grid-container {
+  width: 540px;
+  height: 540px;
+  background-color: slategray;
+  display: grid;
+  grid-template: repeat(14, 1fr) / repeat(14, 1fr);
+  /*when drawing an L, you start top and go down, then LR*/
+  gap: 0.4%;
+}
+
+.grid-container > div {
+  /* I won't need this later */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+p,
+h1 {
+  margin: 4px;
+}
