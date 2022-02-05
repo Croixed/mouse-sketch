@@ -3,8 +3,10 @@ const resetButton = document.querySelector('.reset');
 const colorButton = document.querySelector('.color-picker');
 const rainbowButton = document.querySelector('.rainbow');
 const slider = document.querySelector('.slider');
+const colorPicker = document.querySelector('.colpick');
 
 let rainbowMode = false;
+let colorMode = false;
 
 
 function genPixels() {
@@ -34,14 +36,23 @@ function genPixels() {
 function addBgStyle(e) { // I feel like this might be a bad pattern
   if (rainbowMode) {
     e.target.style.backgroundColor = `rgb(${Math.floor(Math.random() * 255)},${Math.floor(Math.random() * 255)},${Math.floor(Math.random() * 255)})`;
+  } else if (colorMode) {
+    e.target.style.backgroundColor = `${colorPicker.value}` //'white';
   } else {
     e.target.style.backgroundColor = 'black';
   }
 };
 
 function toggleRainbow() {
+  colorMode = false;
   rainbowMode = !rainbowMode;
   console.log(rainbowMode);
+};
+
+function toggleColor () {
+  rainbowMode = false;
+  colorMode = !colorMode;
+  console.log(colorMode);
 };
 
 function resetScreen () {
@@ -49,13 +60,9 @@ function resetScreen () {
   genPixels();
 }
 
-function pickColor () {
-  alert('coming in patch 0.45 alpha release 3');
-};
-
 resetButton.addEventListener('click', resetScreen);
 rainbowButton.addEventListener('click', toggleRainbow);
-colorButton.addEventListener('click', pickColor);
+colorButton.addEventListener('click', toggleColor);
 
 resetScreen(); // first call to lay out initial grid
 slider.oninput = genPixels; // this only accepts funcs not return vals, so forget the ()

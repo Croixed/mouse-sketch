@@ -1,5 +1,5 @@
 * {
-  background-color: rgb(215, 236, 224);
+  background-color: rgb(113, 204, 154);
   font-family: sans-serif;
   font-weight: bold;
 }
@@ -37,13 +37,32 @@ html, body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 30px;
+  gap: 0px;
 }
 
 .settings > * {
   font-size: 1.2em;
   background-color: white;
   align-self: center;
+  margin-top: 35px;
+}
+
+.settings-title {
+  font-size: 1.4em;
+  background-color: royalblue;
+}
+
+.color-picker {
+  font-size: 1em;
+  background-color: white;
+}
+
+.color-container {
+  display: flex;
+}
+
+.slider {
+  margin-top: 2px;
 }
 
 .slide-title {

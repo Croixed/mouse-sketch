@@ -15,8 +15,12 @@
       <p>drag your mouse around to draw.</p>
     </div>
     <div class="settings">
+      <div class="settings-title">OPTIONS:</div>
       <button class="reset">reset</button>
-      <button class="color-picker">pick a color</button>
+      <div class="color-container">
+        <button class="color-picker">solid color</button>
+        <input type="color" class="colpick" name="colpick" value="#e63365">
+      </div>
       <button class="rainbow">rainbow</button>
       <div class="slide-title">Select your grid resolution:</div>
       <input type="range" min="26" max="40" value="33" class="slider">
