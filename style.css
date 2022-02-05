@@ -46,10 +46,15 @@ html, body {
   align-self: center;
 }
 
+.slide-title {
+  text-align: center;
+  background-color: royalblue;
+}
 
 .grid-container {
   grid-column: 2 / -2;
 }
+
 
 
 .grid-container {

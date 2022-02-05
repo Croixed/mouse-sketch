@@ -1,15 +1,18 @@
 const gridContainer = document.querySelector('.grid-container');
-let slider = document.querySelector('.slider');
+const resetButton = document.querySelector('.reset');
+const colorButton = document.querySelector('.color-picker');
+const rainbowButton = document.querySelector('.rainbow');
+const slider = document.querySelector('.slider');
 
 
 function genPixels() {
   console.log(this.value);
   //remove any previous divs
-  //then set the proper box size
+  //then set the proper grid columns & rows
   //make a div element with let
   //apply a class
+  //apply an event listener
   //append it to the grid container
-  //return this.value;
   while (gridContainer.firstChild) {
     gridContainer.removeChild(gridContainer.firstChild);
   };
@@ -27,19 +30,10 @@ function genPixels() {
 };
 
 function addBgClass(e) {
-  e.target.style.backgroundColor = "black";
+  //e.target.style.backgroundColor = "black";
+  e.target.style.backgroundColor = `rgb(${Math.floor(Math.random() * 255)},${Math.floor(Math.random() * 255)},${Math.floor(Math.random() * 255)})`;
 }
 
-
-// for (let i = 0; i < (14 * 14) - 1; i++) {
-//   //make a div element with let
-//   //apply a class
-//   //append it to the grid container
-//   let pixel = document.createElement('div');
-//   pixel.classList.add('pixel');
-//   pixel.textContent = '*';
-//   gridContainer.appendChild(pixel);
-// };
 
 
 
@@ -55,6 +49,6 @@ slider.oninput = genPixels; // this only accepts funcs not vals
 
 
 
-// slider.oninput = function() { // no longer need anony
+// slider.oninput = function() { // no longer need anon
 //   console.log(this.value);
 // };
