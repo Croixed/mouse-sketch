@@ -25,26 +25,10 @@ function genPixels() {
   for (let i = 0; i < (this.value * this.value); i++) {
     let pixel = document.createElement('div');
     pixel.classList.add('pixel');
-    //pixel.textContent = '*';
+    pixel.style.background = 'white';
     pixel.addEventListener("mouseover", addBgStyle)
     gridContainer.appendChild(pixel);
   };
-};
-
-function resetScreen() { // copied code from gen func, instead I should move to sub functions and callback
-  while (gridContainer.firstChild) {
-    gridContainer.removeChild(gridContainer.firstChild);
-  };
-  gridContainer.style.gridTemplateColumns = `repeat(${slider.value}, 1fr)`; 
-  gridContainer.style.gridTemplateRows = `repeat(${slider.value}, 1fr)`; 
-  for (let i = 0; i < (slider.value * slider.value); i++) {
-    let pixel = document.createElement('div');
-    pixel.classList.add('pixel');
-    //pixel.textContent = '*';
-    pixel.addEventListener("mouseover", addBgStyle)
-    gridContainer.appendChild(pixel);
-  };
-  console.log(slider.value);
 };
 
 function addBgStyle(e) { // I feel like this might be a bad pattern
@@ -55,16 +39,27 @@ function addBgStyle(e) { // I feel like this might be a bad pattern
   }
 };
 
-function rainbowToggle() {
+function toggleRainbow() {
   rainbowMode = !rainbowMode;
   console.log(rainbowMode);
 };
 
-resetButton.addEventListener('click', resetScreen);
-rainbowButton.addEventListener('click', rainbowToggle);
+function resetScreen () {
+  this.value = 33;
+  genPixels();
+}
 
+function pickColor () {
+  alert('coming in patch 0.45 alpha release 3');
+};
+
+resetButton.addEventListener('click', resetScreen);
+rainbowButton.addEventListener('click', toggleRainbow);
+colorButton.addEventListener('click', pickColor);
+
+resetScreen(); // first call to lay out initial grid
 slider.oninput = genPixels; // this only accepts funcs not return vals, so forget the ()
-resetScreen();
+
 
 
 // function logSize() { //instead of passing in args, like slider.value,
