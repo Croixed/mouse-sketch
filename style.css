@@ -1,5 +1,5 @@
 * {
-  background-color: rgb(113, 204, 154);
+  background-color: rgb(209, 255, 229);
   font-family: sans-serif;
   font-weight: bold;
 }
@@ -96,4 +96,11 @@ html, body {
 p,
 h1 {
   margin: 4px;
+}
+
+
+
+.highlighted {
+  background-color: rgb(37, 32, 32);
+  color: rgb(223, 223, 223);
 }

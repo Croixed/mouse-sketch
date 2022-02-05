@@ -43,16 +43,32 @@ function addBgStyle(e) { // I feel like this might be a bad pattern
   }
 };
 
-function toggleRainbow() {
-  colorMode = false;
+function toggleRainbow() { // this can't be good
+  // if color mode is active, deactivate it and de-highlight the button
+  if (colorMode) { 
+    colorMode = false;
+    colorButton.classList.remove('highlighted');
+  };
   rainbowMode = !rainbowMode;
-  console.log(rainbowMode);
+  if (rainbowMode) {
+    rainbowButton.classList.add('highlighted');
+  } else {
+    rainbowButton.classList.remove('highlighted');
+  }
 };
 
-function toggleColor () {
-  rainbowMode = false;
+function toggleColor () { // should probably have sub funcs that are called by color and rainbow instead of copying code
+  // if rainbow mode is active, deactivate it and de-highlight the button
+  if (rainbowMode) {
+    rainbowMode = false;
+    rainbowButton.classList.remove('highlighted');
+  }
   colorMode = !colorMode;
-  console.log(colorMode);
+  if (colorMode) {
+    colorButton.classList.add('highlighted');
+  } else {
+    colorButton.classList.remove('highlighted');
+  }
 };
 
 function resetScreen () {
@@ -66,6 +82,11 @@ colorButton.addEventListener('click', toggleColor);
 
 resetScreen(); // first call to lay out initial grid
 slider.oninput = genPixels; // this only accepts funcs not return vals, so forget the ()
+
+
+
+
+
 
 
 
