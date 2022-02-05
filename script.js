@@ -20,13 +20,15 @@ function genPixels() {
   for (let i = 0; i < (this.value * this.value) - 1; i++) {
     let pixel = document.createElement('div');
     pixel.classList.add('pixel');
-    pixel.textContent = '*';
+    //pixel.textContent = '*';
+    pixel.addEventListener("mouseover", addBgClass)
     gridContainer.appendChild(pixel);
   };
-
 };
 
-
+function addBgClass(e) {
+  e.target.style.backgroundColor = "black";
+}
 
 
 // for (let i = 0; i < (14 * 14) - 1; i++) {
