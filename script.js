@@ -17,7 +17,7 @@ function genPixels() {
   gridContainer.style.gridTemplateColumns = `repeat(${this.value}, 1fr)`; // "repeat(20, 1fr)";
   gridContainer.style.gridTemplateRows = `repeat(${this.value}, 1fr)`; // "repeat(20, 1fr)";
 
-  for (let i = 0; i < (this.value * this.value) - 1; i++) {
+  for (let i = 0; i < (this.value * this.value); i++) {
     let pixel = document.createElement('div');
     pixel.classList.add('pixel');
     //pixel.textContent = '*';
@@ -42,7 +42,7 @@ function addBgClass(e) {
 // };
 
 
-genPixels(22);
+
 slider.oninput = genPixels; // this only accepts funcs not vals
 
 
