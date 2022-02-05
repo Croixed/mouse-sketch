@@ -1,13 +1,15 @@
 * {
-  background-color: rgb(209, 255, 229);
+  background-color: #72EFDD;
   font-family: sans-serif;
   font-weight: bold;
+  color: white;
+  text-shadow: 0 0 0.2em rgb(2, 2, 2);
 }
 
 html, body {
   box-sizing: border-box; /* this makes the page fit so you don't have to scroll a tiny bit  */
   height: 100%;
-  padding: 2px;
+  padding: 0px;
   margin: 0px;
 }
 
@@ -15,7 +17,7 @@ html, body {
   height: 100%;
   display: grid;
   grid-gap: 4px;
-  grid-template: 120px auto / 1fr 540px 1fr;
+  grid-template: 120px auto / repeat(2, 1fr) [grid-start] 540px [grid-end] repeat(2, 1fr);
 }
 
 .header {
@@ -27,13 +29,12 @@ html, body {
 
 .header,
 .header > * {
-  background-color: tomato;
+  background-color: #5390D9;
   color: white;
 }
 
 .settings {
   grid-column: 1 / 2;
-  background-color: royalblue;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -42,23 +43,28 @@ html, body {
 
 .settings > * {
   font-size: 1.2em;
-  background-color: white;
+  background-color: #72EFDD;
   align-self: center;
   margin-top: 35px;
 }
 
 .settings-title {
   font-size: 1.4em;
-  background-color: royalblue;
 }
 
 .color-picker {
   font-size: 1em;
+  white-space: nowrap; 
   background-color: white;
 }
 
 .color-container {
   display: flex;
+  background-color: #64DFDF;
+}
+
+.color-container > * {
+  background-color: #72EFDD;
 }
 
 .slider {
@@ -67,20 +73,28 @@ html, body {
 
 .slide-title {
   text-align: center;
-  background-color: royalblue;
 }
+
+.settings-title,
+.slide-title,
+.settings {
+  background-color: #64DFDF;
+}
+
+
 
 .grid-container {
   grid-column: 2 / -2;
 }
 
-
-
 .grid-container {
+  border: 12px solid #64DFDF;
+  border-radius: 10px;
   width: 540px;
   height: 540px;
-  background-color: slategray;
+  background-color: rgb(231, 237, 243);
   display: grid;
+  grid-column: grid;
   grid-template: repeat(14, 1fr) / repeat(14, 1fr);
   /*when drawing an L, you start top and go down, then LR*/
   gap: 0.2%;
@@ -98,6 +112,10 @@ h1 {
   margin: 4px;
 }
 
+button {
+  border: none;
+  border-radius: 5px;
+}
 
 
 .highlighted {
