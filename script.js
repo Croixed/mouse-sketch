@@ -5,6 +5,8 @@ const rainbowButton = document.querySelector('.rainbow');
 const slider = document.querySelector('.slider');
 
 
+
+
 function genPixels() {
   console.log(this.value);
   //remove any previous divs
@@ -17,25 +19,41 @@ function genPixels() {
     gridContainer.removeChild(gridContainer.firstChild);
   };
 
-  gridContainer.style.gridTemplateColumns = `repeat(${this.value}, 1fr)`; // "repeat(20, 1fr)";
-  gridContainer.style.gridTemplateRows = `repeat(${this.value}, 1fr)`; // "repeat(20, 1fr)";
+  gridContainer.style.gridTemplateColumns = `repeat(${this.value}, 1fr)`; 
+  gridContainer.style.gridTemplateRows = `repeat(${this.value}, 1fr)`; 
 
   for (let i = 0; i < (this.value * this.value); i++) {
     let pixel = document.createElement('div');
     pixel.classList.add('pixel');
     //pixel.textContent = '*';
-    pixel.addEventListener("mouseover", addBgClass)
+    pixel.addEventListener("mouseover", addBgStyle)
     gridContainer.appendChild(pixel);
   };
 };
 
-function addBgClass(e) {
-  //e.target.style.backgroundColor = "black";
-  e.target.style.backgroundColor = `rgb(${Math.floor(Math.random() * 255)},${Math.floor(Math.random() * 255)},${Math.floor(Math.random() * 255)})`;
-}
 
+function addBgStyle(e) {
+  if (rainbowMode) {
+    e.target.style.backgroundColor = `rgb(${Math.floor(Math.random() * 255)},${Math.floor(Math.random() * 255)},${Math.floor(Math.random() * 255)})`;
+  } else {
+    e.target.style.backgroundColor = 'black';
+  }
+};
 
+let rainbowMode = false;
 
+function rainbowToggle() {
+  rainbowMode = !rainbowMode;
+  //modify the BgStyle
+  console.log(rainbowMode);
+};
+
+function resetScreen(e) {
+  console.log(e);
+};
+
+resetButton.addEventListener('click', resetScreen);
+rainbowButton.addEventListener('click', rainbowToggle);
 
 slider.oninput = genPixels; // this only accepts funcs not vals
 
