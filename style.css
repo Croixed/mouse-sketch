@@ -59,7 +59,7 @@ html, body {
   display: grid;
   grid-template: repeat(14, 1fr) / repeat(14, 1fr);
   /*when drawing an L, you start top and go down, then LR*/
-  gap: 0.4%;
+  gap: 0.2%;
 }
 
 .grid-container > div {

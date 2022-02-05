@@ -42,7 +42,7 @@ function addBgClass(e) {
 // };
 
 
-
+genPixels(22);
 slider.oninput = genPixels; // this only accepts funcs not vals
 
 
