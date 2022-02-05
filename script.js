@@ -5,6 +5,7 @@ let slider = document.querySelector('.slider');
 function genPixels() {
   console.log(this.value);
   //remove any previous divs
+  //then set the proper box size
   //make a div element with let
   //apply a class
   //append it to the grid container
@@ -12,6 +13,10 @@ function genPixels() {
   while (gridContainer.firstChild) {
     gridContainer.removeChild(gridContainer.firstChild);
   };
+
+  gridContainer.style.gridTemplateColumns = `repeat(${this.value}, 1fr)`; // "repeat(20, 1fr)";
+  gridContainer.style.gridTemplateRows = `repeat(${this.value}, 1fr)`; // "repeat(20, 1fr)";
+
   for (let i = 0; i < (this.value * this.value) - 1; i++) {
     let pixel = document.createElement('div');
     pixel.classList.add('pixel');
