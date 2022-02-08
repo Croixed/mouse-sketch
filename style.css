@@ -43,7 +43,7 @@ html, body {
 
 .settings > * {
   font-size: 1.42em;
-  background-color: slategray;
+  background-color: #3eaf76;
   align-self: center;
   margin-top: 35px;
 }
@@ -63,7 +63,7 @@ html, body {
 }
 
 .color-container > * {
-  background-color: slategray;
+  background-color: #3eaf76;
 }
 
 .slider {
