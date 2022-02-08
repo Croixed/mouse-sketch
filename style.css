@@ -42,8 +42,8 @@ html, body {
 }
 
 .settings > * {
-  font-size: 1.2em;
-  background-color: #72EFDD;
+  font-size: 1.42em;
+  background-color: slategray;
   align-self: center;
   margin-top: 35px;
 }
@@ -60,11 +60,10 @@ html, body {
 
 .color-container {
   display: flex;
-  background-color: #64DFDF;
 }
 
 .color-container > * {
-  background-color: #72EFDD;
+  background-color: slategray;
 }
 
 .slider {
@@ -75,10 +74,11 @@ html, body {
   text-align: center;
 }
 
+.color-container,
 .settings-title,
 .slide-title,
 .settings {
-  background-color: #64DFDF;
+  background-color: #56d8d8;
 }
 
 
@@ -110,6 +110,14 @@ html, body {
 p,
 h1 {
   margin: 4px;
+}
+
+h1 {
+  font-size: 34px;
+}
+
+p {
+  font-size: 22px;
 }
 
 button {
