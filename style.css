@@ -60,6 +60,8 @@ html, body {
 
 .color-container {
   display: flex;
+  margin-left: 18px;
+  margin-right: 18px;
 }
 
 .color-container > * {
